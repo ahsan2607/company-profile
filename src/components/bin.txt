@@ -1,0 +1,51 @@
+<Box style={{ minHeight: "92vh", backgroundImage: `url(${Banner[bannerIndex]})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center", transition: "200ms" }}>
+        <Grid container justifyContent="center" alignItems="center" style={{ minHeight: "92vh" }}>
+          <Grid container justifyContent="flex-start" alignItems="center" xs={6} sm={6} md={6} lg={6} xl={6} style={{ zIndex: 999 }}>
+            <Fab size="small" style={{ padding: "5px" }}>
+              <IconButton onClick={() => {
+                setBannerIndex((bannerIndex === 0) ? 4 : (bannerIndex - 1));
+                setDescIndex((bannerIndex === 0) ? 4 : (bannerIndex - 1));
+              }}>
+                <ArrowBackIcon />
+              </IconButton>
+            </Fab>
+          </Grid>
+          <Grid container justifyContent="flex-end" alignItems="center" xs={6} sm={6} md={6} lg={6} xl={6} style={{ zIndex: 999 }}>
+            <Fab size="small" style={{ padding: "5px" }}>
+              <IconButton onClick={() => {
+                setBannerIndex((bannerIndex === 4) ? 0 : (bannerIndex + 1));
+                setDescIndex((bannerIndex === 4) ? 0 : (bannerIndex + 1));
+              }}>
+                <ArrowForwardIcon />
+              </IconButton>
+            </Fab>
+          </Grid>
+          <Grid container position="absolute" justifyContent="center" alignItems="flex-end" xs={10} sm={10} md={9} lg={9} xl={8}>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Card variant="contained" position="absolute" style={{ width: "100%", backgroundColor: "transparent" }}>
+                <CardContent>
+                  <Typography variant="h3" component="div">
+                    {Desc[descIndex][0]}
+                  </Typography>
+                  <Typography variant="body1">
+                    {Desc[descIndex][1]}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button variant="contained">Learn More</Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Box
+                component="img"
+                sx={{
+                  width: "100%",
+                }}
+                alt="The house from the offer."
+                src={Banner[bannerIndex]}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Box>

@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --primary : #3763a4;
+  --secondary : #ffbe00;
+  --primary-darker : #154182;
+  --secondary-darker : #cc8b00;
+}
+
+.py-s {
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+}
+
+.py-m {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.py-l {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
