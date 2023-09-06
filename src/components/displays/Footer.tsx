@@ -4,8 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import MoreIcon from '@mui/icons-material/MoreVert';
 
 export const Footer = () => {
   return (
@@ -27,4 +25,4 @@ export const Footer = () => {
       </AppBar>
     </>
   );
-}
+};

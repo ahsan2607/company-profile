@@ -1,5 +1,23 @@
 import * as React from 'react';
-import { AppBar, Divider, List, ListItem, ListItemButton, ListItemText, IconButton, Button, Drawer, Toolbar, Typography, CssBaseline, useScrollTrigger, Box, Slide, Fade, Fab } from '@mui/material';
+import {
+  AppBar,
+  Divider,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  IconButton,
+  Button,
+  Drawer,
+  Toolbar,
+  Typography,
+  CssBaseline,
+  useScrollTrigger,
+  Box,
+  Slide,
+  Fade,
+  Fab,
+} from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -26,9 +44,7 @@ function ScrollTop(props: ScrollTopProps) {
   });
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const anchor = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector('#back-to-top-anchor');
+    const anchor = ((event.target as HTMLDivElement).ownerDocument || document).querySelector('#back-to-top-anchor');
 
     if (anchor) {
       anchor.scrollIntoView({
@@ -39,11 +55,7 @@ function ScrollTop(props: ScrollTopProps) {
 
   return (
     <Fade in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
-      >
+      <Box onClick={handleClick} role="presentation" sx={{ position: 'fixed', bottom: 16, right: 16 }}>
         {children}
       </Box>
     </Fade>
@@ -64,7 +76,6 @@ function HideOnScroll(props: HiddenProps) {
 }
 
 export const Header = (props: HeaderProps) => {
-
   const drawerWidth = 240;
   const navItems = ['Home', 'About', 'Contact'];
 
@@ -110,11 +121,7 @@ export const Header = (props: HeaderProps) => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
               MUI
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -152,4 +159,4 @@ export const Header = (props: HeaderProps) => {
       </nav>
     </>
   );
-}
+};
