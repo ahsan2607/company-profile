@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-import { headerContent } from './contents';
+import { navContent } from './contents';
 
-const routes = headerContent.map((headerContent) => {
+const routes = navContent.map((navContent) => {
   type Routes = {
     path: string;
     element: JSX.Element;
   };
 
   const route: Routes = {
-    path: headerContent.link,
-    element: headerContent.el,
+    path: navContent.link,
+    element: navContent.el,
   };
 
   return route;

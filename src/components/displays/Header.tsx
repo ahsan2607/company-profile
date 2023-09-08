@@ -21,7 +21,7 @@ import {
 import { Link } from 'react-router-dom';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import MenuIcon from '@mui/icons-material/Menu';
-import { headerContent } from '../../contents';
+import { navContent } from '../../contents';
 
 interface HiddenProps {
   window?: () => Window;
@@ -94,11 +94,11 @@ export const Header = (props: HeaderProps) => {
       </Typography>
       <Divider />
       <List>
-        {headerContent.map((headerContent) => (
-          <ListItem key={headerContent.key} disablePadding>
+        {navContent.map((navContent) => (
+          <ListItem key={navContent.key} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <Link to={headerContent.link}>
-                <ListItemText primary={headerContent.name} />
+              <Link to={navContent.link}>
+                <ListItemText primary={navContent.name} />
               </Link>
             </ListItemButton>
           </ListItem>
@@ -128,9 +128,9 @@ export const Header = (props: HeaderProps) => {
               MUI
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {headerContent.map((headerContent) => (
-                <Link key={headerContent.key} to={headerContent.link}>
-                  <Button sx={{ color: '#fff' }}>{headerContent.name}</Button>
+              {navContent.map((navContent) => (
+                <Link key={navContent.key} to={navContent.link}>
+                  <Button sx={{ color: '#fff' }}>{navContent.name}</Button>
                 </Link>
               ))}
             </Box>

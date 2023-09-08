@@ -1,6 +1,6 @@
 import { Home, AboutUs, ContactList } from '../pages';
 
-export const headerContent = [
+export const navContent = [
   {
     key: 'nav1',
     name: 'Home',
