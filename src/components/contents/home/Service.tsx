@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 
-import { serviceContent } from '../../contents';
-import { Title } from '..';
+import { serviceContent } from '../../../contents';
+import { Title } from '../..';
 
 const renderServices = serviceContent.map((serviceContent) => {
   return (

@@ -1,7 +1,7 @@
 import { Typography, Box } from '@mui/material';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import { carouselContent } from '../../contents';
+import { carouselContent } from '../../../contents';
 
 const renderCarousel = carouselContent.map((carouselContent) => {
   return (

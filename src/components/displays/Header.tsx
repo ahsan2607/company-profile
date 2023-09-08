@@ -18,8 +18,10 @@ import {
   Fade,
   Fab,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import MenuIcon from '@mui/icons-material/Menu';
+import { headerContent } from '../../contents';
 
 interface HiddenProps {
   window?: () => Window;
@@ -55,7 +57,7 @@ function ScrollTop(props: ScrollTopProps) {
 
   return (
     <Fade in={trigger}>
-      <Box onClick={handleClick} role="presentation" sx={{ position: 'fixed', bottom: 16, right: 16 }}>
+      <Box onClick={handleClick} role="presentation" sx={{ position: 'fixed', bottom: 16, right: 16, zIndex: 999 }}>
         {children}
       </Box>
     </Fade>
@@ -77,7 +79,6 @@ function HideOnScroll(props: HiddenProps) {
 
 export const Header = (props: HeaderProps) => {
   const drawerWidth = 240;
-  const navItems = ['Home', 'About', 'Contact'];
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -93,10 +94,12 @@ export const Header = (props: HeaderProps) => {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {headerContent.map((headerContent) => (
+          <ListItem key={headerContent.key} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <Link to={headerContent.link}>
+                <ListItemText primary={headerContent.name} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -125,10 +128,10 @@ export const Header = (props: HeaderProps) => {
               MUI
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
-                </Button>
+              {headerContent.map((headerContent) => (
+                <Link key={headerContent.key} to={headerContent.link}>
+                  <Button sx={{ color: '#fff' }}>{headerContent.name}</Button>
+                </Link>
               ))}
             </Box>
           </Toolbar>

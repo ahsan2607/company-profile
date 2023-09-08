@@ -1,6 +1,6 @@
 import { Button, Card, CardContent, CardActions, Container, Grid, Typography } from '@mui/material';
-import { programContent } from '../../contents';
-import { Title } from '..';
+import { programContent } from '../../../contents';
+import { Title } from '../..';
 
 const renderPrograms = programContent.map((programContent) => {
   return (
